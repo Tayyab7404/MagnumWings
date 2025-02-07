@@ -603,7 +603,7 @@ footer {
         margin-right: auto;
     }
     .ceo-message #name {
-        left: 0%;
+        left: 40%;
     }
     .company-details h2 {
         font-size: 28px;
@@ -619,6 +619,7 @@ footer {
         margin: 0;
     }
     #msg2 {
+        left: 0%;
         bottom: 10%;
     }
 }
