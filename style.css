@@ -180,7 +180,8 @@ section .detail-box.out-of-view {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     margin-right: 20px;
     color: #ffffff;
     padding: 20px;
@@ -209,6 +210,7 @@ section .detail-box.out-of-view {
     left: 0;
     z-index: -1;
     background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     color: white;
     transition: all 0.4s;
 }
@@ -229,12 +231,12 @@ section .detail-box.out-of-view {
 .detail-box {
     position: relative;
     color: white;
-    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     padding: 15px 20px;
     border-radius: 15px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 15px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -261,7 +263,8 @@ section .detail-box.out-of-view {
     left: 0;
     z-index: -1;
     color: white;
-    background: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     transition: all 0.4s;
 }
 
@@ -272,7 +275,7 @@ section .detail-box.out-of-view {
     background: rgba(1, 1, 1, 0.1);
     padding: 30px 20px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
@@ -329,7 +332,8 @@ section .detail-box.out-of-view {
 }
 
 .video-overlay .time-box {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
     padding: 10px 15px;
     border-radius: 10px;
     display: flex;
@@ -340,7 +344,7 @@ section .detail-box.out-of-view {
 
 .video-overlay .time-box:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .video-overlay .time-box img {
@@ -351,7 +355,7 @@ section .detail-box.out-of-view {
 .video-overlay .time-box .hover-text {
     opacity: 0;
     font-size: 16px;
-    color: #000;
+    color: #fff;
     transition: opacity 0.3s ease;
 }
 
@@ -441,7 +445,7 @@ section.ceo-section {
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     margin-right: 1000px;
     margin-bottom: 200px;
     /* Continuous floating animation for the CEO image */
@@ -450,12 +454,12 @@ section.ceo-section {
 
 .ceo-message {
     color: white;
-    background: rgba(0, 0, 0, 0.3);
     padding: 20px;
     border-radius: 15px;
     font-size: 20px;
     max-width: 1000px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     /* Continuous pulse for the message */
     animation: pulseEffect 3s ease-in-out infinite;
@@ -599,17 +603,17 @@ footer {
     .detail-box {
         font-size: 10px;
         width: 70%;
-        background: rgba(255, 255, 255, 0.3);
+        background-color: rgba(0, 0, 0, 0.3);
     }
     .detail-box::after {
-        background-color: rgb(255, 255, 255, 0.3);
+        background-color: rgba(0, 0, 0, 0.3);
     }
     #slide1, 
     #slide2, 
     #slide3, 
     #slide4 {
         bottom: 10%;
-        background-color: rgb(255, 255, 255, 0.3);
+        background-color: rgba(0, 0, 0, 0.3);
     }
 }
 
