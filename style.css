@@ -467,6 +467,18 @@ footer {
     animation: float 6s ease-in-out infinite;
 }
 
+#colorred:hover {
+    color: red;
+}
+
+#colororange:hover {
+    color: rgb(187, 0, 115);
+}
+
+#colorwhite:hover {
+    color: white
+}
+
 .footer-container {
     display: flex;
     flex-wrap: wrap;
