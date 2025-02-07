@@ -13,31 +13,36 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 63px;
+    height: 59px;
     background: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 10px 20px;
+    padding: 10px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     transition: background 0.5s ease;
     z-index: 1;
 }
 
-header img {
-    width: 350px;
+img {
+    width: 330px;
 }
 
-/*img,*/
-video {
+img, video {
     pointer-events: none;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     line-height: 1.6;
-    color: #000000;
+    color: #000;
     background: #000;
     overflow-x: hidden;
     scrollbar-gutter: stable both-edges;
@@ -47,7 +52,6 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
 
 /*--------------------------------------------------------------
   Section Base Styles & Continuous Floating Animation
@@ -102,7 +106,6 @@ section .detail-box.out-of-view {
     animation: moveOutRight 1s ease-in forwards;
 }
 
-
 /* Floating keyframe for sections */
 @keyframes float {
     0% { transform: translateY(0); }
@@ -125,22 +128,21 @@ section .detail-box.out-of-view {
     }
 }
 
-/* New, more visible continuous animations */
-/* A pulse effect for message boxes and text */
+/* Continuous pulse effect for message boxes and text */
 @keyframes pulseEffect {
     0%   { transform: scale(0.8); }
     50%  { transform: scale(1); }
     100% { transform: scale(0.8); }
 }
 
-/* A pop effect for detail boxes */
+/* Pop effect for detail boxes */
 @keyframes popEffect {
     0%   { transform: scale(0.6); }
     50%  { transform: scale(1); }
     100% { transform: scale(0.6); }
 }
 
-/* A text pulse effect for company details */
+/* Text pulse effect for company details */
 @keyframes textPulse {
     0%   { transform: scale(1); }
     50%  { transform: scale(1.05); }
@@ -181,13 +183,11 @@ section .detail-box.out-of-view {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     z-index: 1;
-
     /* Entrance animation then a continuous pulse */
     animation: moveInBottom 1s ease-out forwards, pulseEffect 3s ease-in-out infinite;
 }
 
-#msg2
-{
+#msg2 {
     left: 20%;
     bottom: 30%;
 }
@@ -221,7 +221,7 @@ section .detail-box.out-of-view {
 
 .detail-box {
     position: relative;
-    background: rgba(255, 255, 255, 0.97);
+    background: rgba(255, 255, 255, 0.9);
     padding: 15px 20px;
     border-radius: 15px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -230,7 +230,8 @@ section .detail-box.out-of-view {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* animation: fadeIn 3s ease-out, slideInFromLeft 3s ease-out, moveInRight 1s ease-out forwards; */
+    /* Initial animations */
+    animation: fadeIn 3s ease-out, slideInFromLeft 3s ease-out, moveInRight 1s ease-out forwards;
 }
 
 .detail-box:nth-child(1) { animation-delay: 0.3s; }
@@ -251,7 +252,7 @@ section .detail-box.out-of-view {
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.9);
     transition: all 0.4s;
 }
 
@@ -267,7 +268,6 @@ section .detail-box.out-of-view {
     margin: 0 auto;
     text-align: center;
     transform: translateY(20px);
-
     /* Entrance then continuous text pulse */
     animation: moveInBottom 1s ease-out forwards, textPulse 2s ease-in-out infinite;
 }
@@ -315,7 +315,6 @@ section .detail-box.out-of-view {
     flex-direction: column;
     gap: 10px;
     z-index: 2;
-
     /* Entrance animation (no continuous loop) */
     animation: moveInLeft 1s ease-out forwards;
 }
@@ -387,6 +386,7 @@ section .detail-box.out-of-view {
     left: 0%;
 }
 
+/* Navigation dots */
 .nav-dots {
     position: absolute;
     bottom: 20px;
@@ -447,7 +447,6 @@ section.ceo-section {
     max-width: 1000px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
     /* Continuous pulse for the message */
     animation: pulseEffect 3s ease-in-out infinite;
 }
@@ -464,7 +463,6 @@ footer {
     background: #222;
     color: #eee;
     padding-top: 40px;
-
     /* Continuous floating effect for the footer */
     animation: float 6s ease-in-out infinite;
 }
@@ -554,11 +552,11 @@ footer {
 /*--------------------------------------------------------------
   Responsive Styles
 --------------------------------------------------------------*/
+/* Adjust detail container layout for smaller screens */
 @media (max-width: 1300px) {
     .ceo-image {
         margin-right: 300px;
     }
-
     .detail-container {
         width: 900px;
     }
@@ -567,18 +565,24 @@ footer {
 @media (max-width: 900px) {
     .detail-container {
         width: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
-
     .detail-box {
-        font-size: 15px;
+        font-size: 10px;
+        width: 70%;
+        background: rgba(255, 255, 255, 0.3);
     }
-
+    .detail-box::after {
+        background-color: rgb(255, 255, 255, 0.3);
+    }
     #slide1, 
     #slide2, 
     #slide3, 
     #slide4 {
-        left: 10%;
         bottom: 10%;
+        background-color: rgb(255, 255, 255, 0.3);
     }
 }
 
@@ -587,29 +591,23 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-
     .video-section video {
         height: 50vh;
     }
-
     .ceo-container {
         flex-direction: column;
     }
-
     .ceo-image {
         width: 200px;
         height: 200px;
         margin-right: auto;
     }
-
     .ceo-message #name {
         left: 0%;
     }
-
     .company-details h2 {
         font-size: 28px;
     }
-
     .company-details p {
         font-size: 18px;
     }
@@ -625,19 +623,12 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    section .detail-box.in-view,
-    section .detail-box.out-of-view {
-        animation: none !important;
-    }
-}
-
 @media (max-width: 500px) {
     .ceo-image {
         margin-right: 0;
     }
 }
-
+  
 /*--------------------------------------------------------------
   Scrollbar Styles
 --------------------------------------------------------------*/
