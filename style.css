@@ -13,15 +13,15 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 59px;
-    background: rgb(0, 0, 0);
+    height: 67px;
+    background: linear-gradient(90deg, rgb(13, 13, 13) 20%, rgb(42, 42, 42) 80%);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 10px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     transition: background 0.5s ease;
-    z-index: 1;
+    z-index: 1000;
 }
 
 img {
@@ -43,7 +43,7 @@ body {
     font-size: 18px;
     line-height: 1.6;
     color: #000;
-    background: #000;
+    background: white; /*linear-gradient(90deg, rgb(42, 42, 42) 20%, rgb(13, 11, 11) 80%);*/
     overflow-x: hidden;
     scrollbar-gutter: stable both-edges;
 }
@@ -58,7 +58,7 @@ a {
 --------------------------------------------------------------*/
 section {
     min-height: 100vh;
-    margin: 0;
+    margin: 20px;
     padding: 0;
     position: relative;
     display: flex;
@@ -68,10 +68,16 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    border-radius: 25px;
     opacity: 1; /* Always visible */
+    box-shadow: -10px 5px 25px rgb(42, 41, 41), 10px 5px 25px rgb(42, 41, 41);
     
     /* Continuous subtle floating for background sections */
-    animation: float 6s ease-in-out infinite;
+    /*animation: float 6s ease-in-out infinite;*/
+}
+
+#section1 {
+    margin-top: 87px;
 }
 
 /* Animation for when the detail-box comes into view */
@@ -174,9 +180,9 @@ section .detail-box.out-of-view {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.95);
+    background: transparent;
     margin-right: 20px;
-    color: #000;
+    color: #ffffff;
     padding: 20px;
     border-radius: 25px;
     text-align: center;
@@ -202,7 +208,8 @@ section .detail-box.out-of-view {
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
     transition: all 0.4s;
 }
 
@@ -221,7 +228,8 @@ section .detail-box.out-of-view {
 
 .detail-box {
     position: relative;
-    background: rgba(255, 255, 255, 0.9);
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
     padding: 15px 20px;
     border-radius: 15px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -252,7 +260,8 @@ section .detail-box.out-of-view {
     top: 0;
     left: 0;
     z-index: -1;
-    background: rgba(255, 255, 255, 0.9);
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
     transition: all 0.4s;
 }
 
@@ -436,11 +445,12 @@ section.ceo-section {
     margin-right: 1000px;
     margin-bottom: 200px;
     /* Continuous floating animation for the CEO image */
-    animation: ceoFloat 4s ease-in-out infinite;
+    /*animation: ceoFloat 4s ease-in-out infinite;*/
 }
 
 .ceo-message {
-    background: rgba(255, 255, 255, 0.95);
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
     padding: 20px;
     border-radius: 15px;
     font-size: 20px;
@@ -463,8 +473,11 @@ footer {
     background: #222;
     color: #eee;
     padding-top: 40px;
+    margin: 20px;
+    border-radius: 25px;
+    box-shadow: -10px 5px 25px rgb(42, 41, 41), 10px 5px 25px rgb(42, 41, 41);
     /* Continuous floating effect for the footer */
-    animation: float 6s ease-in-out infinite;
+    /*animation: float 6s ease-in-out infinite;*/
 }
 
 #colorred:hover {
@@ -558,7 +571,9 @@ footer {
 #copyrights {
     text-align: center;
     padding: 10px 0;
-    background: #000;
+    background-color: #222;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 /*--------------------------------------------------------------
@@ -650,10 +665,10 @@ footer {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: black;
+    background-color: rgb(201, 201, 201);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #fff;
+    background-color: #000000;
     border-radius: 5px;
 }
