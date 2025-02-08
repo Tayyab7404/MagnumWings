@@ -8,6 +8,13 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    background-color: #000;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 header {
@@ -15,7 +22,7 @@ header {
     top: 0;
     width: 100%;
     height: 59px;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(0, 0, 0);
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
     z-index: 100;
 }
@@ -26,18 +33,6 @@ header img {
 
 img, video {
     pointer-events: none;
-}
-
-video {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
 }
 
 a {
@@ -94,7 +89,7 @@ section {
     position: absolute;
     bottom: 10%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 1000px;
 }
 
@@ -122,6 +117,7 @@ section {
         opacity: 0;
         transform: translateX(100%);
     }
+    
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -138,6 +134,7 @@ section .detail-box.in-view {
         opacity: 1;
         transform: translateX(0);
     }
+
     100% {
         opacity: 0;
         transform: translateX(100%);
@@ -151,9 +148,11 @@ section .detail-box.out-of-view {
 .detail-box:nth-child(1) {
     animation-delay: 0.3s;
 }
+
 .detail-box:nth-child(2) {
     animation-delay: 0.5s;
 }
+
 .detail-box:nth-child(3) {
     animation-delay: 0.7s;
 }
@@ -187,6 +186,12 @@ section .detail-box.out-of-view {
 /*--------------------------------------------------------------
   Video Section & Overlay
 --------------------------------------------------------------*/
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 .video-section {
     background-color: #000;
     display: flex;
@@ -378,7 +383,7 @@ footer {
 
 .footer-box {
     flex: 1;
-    min-width: 250px;
+    min-width: 275px;
     margin: 20px;
     background-color: #333;
     padding: 20px;
@@ -400,17 +405,25 @@ footer {
 }
 
 .social-icons a {
-    margin: 10px;
     font-size: 1.5rem;
     color: #eee;
 }
 
 #colorblue1, #colorblue2, #colorwhite, #colorpink, #colorred {
     transition: color 0.3s ease-in-out;
+    margin: 10px;
 }
 
 #colorblue1:hover, #colorblue2:hover {
     color: #1e90ff;
+}
+
+#colorblue1 {
+    margin-left: 0;
+}
+
+#colorred {
+    margin-right: 0;
 }
 
 #colorwhite:hover {
@@ -472,39 +485,58 @@ footer {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgb(201, 201, 201);
+    background-color: rgb(0, 0, 0);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #000000;
-    border-radius: 5px;
+    background-color: #ffffff;
 }
 
 /*--------------------------------------------------------------
   Responsive Styles
 --------------------------------------------------------------*/
 @media (max-width: 1300px) {
-    .ceo-image {
-        margin-right: 300px;
-        margin-bottom: 0;
-    }
-    .ceo-message {
-        margin-top: 150px;
-    }
-
     .detail-container {
         justify-content: space-between;
-        width: 700px;
-        font-size: 13px;
+        width: 900px;
+        font-size: 11px;
+        gap: 25px;
     }
+
     #msg2 {
         width: 80%;
         left: 10%;
         bottom: 25%;
     }
+
+    .ceo-image {
+        margin-right: 300px;
+        margin-bottom: 0;
+    }
+
+    .ceo-message {
+        margin-top: 150px;
+    }
 }
 
 @media (max-width: 1040px) {
+    .detail-container {
+        width: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .detail-box {
+        font-size: 10px;
+        width: 70%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .detail-box::after {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
     #slide1 {
         font-size: 20px;
         left: 50%;
@@ -513,20 +545,6 @@ footer {
 }
 
 @media (max-width: 900px) {
-    .detail-container {
-        width: auto;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .detail-box {
-        font-size: 10px;
-        width: 70%;
-        background-color: rgba(0, 0, 0, 0.3);
-    }
-    .detail-box::after {
-        background-color: rgba(0, 0, 0, 0.3);
-    }
     #slide1, #slide2, #slide3 {
         font-size: 20px;
         left: 20%;
@@ -535,29 +553,40 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
+    .company-details h2 {
+        font-size: 28px;
     }
+
+    .company-details p {
+        font-size: 18px;
+    }
+
     .video-section video {
         height: 50vh;
     }
+
     .ceo-container {
         flex-direction: column;
     }
+
     .ceo-image {
         width: 200px;
         height: 200px;
         margin-right: auto;
     }
+
     .ceo-message #ceo-name {
         left: 40%;
     }
-    .company-details h2 {
-        font-size: 28px;
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
     }
-    .company-details p {
-        font-size: 18px;
+
+    .footer-box {
+        width: 80%;
+        left: 10%;
     }
 }
 
@@ -566,14 +595,21 @@ footer {
         left: 0%;
         margin: 0;
     }
+
     #msg1, #msg2 {
         width: 90%;
         left: 5%;
         bottom: 15%;
     }
+
     #msg1 {
         bottom: 5%;
     }
+
+    .company-details p {
+        font-size: 13px;
+    }
+
     #slide1, #slide2, #slide3 {
         width: 90%;
         left: 5%;
@@ -583,5 +619,24 @@ footer {
 @media (max-width: 500px) {
     .ceo-image {
         margin-right: 0;
+    }
+}
+
+@media (max-width: 350px)
+{
+    header img {
+        width: auto;
+    }
+
+    header {
+        height: auto;
+    }
+
+    .footer-box {
+        min-width: auto;
+    }
+
+    footer p {
+        font-size: x-small;
     }
 }
