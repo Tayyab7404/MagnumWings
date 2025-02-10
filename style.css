@@ -75,7 +75,7 @@ section {
 
 #msg1 {
     left: 55%;
-    bottom: 20px;
+    bottom: 5%;
 }
 
 #msg2 {
@@ -112,7 +112,7 @@ section {
     width: 40px;
 }
 
-/* Animation for when the detail-box comes into view */
+/* Animation for when the detail-box comes into view
 @keyframes moveInRight {
     0% {
         opacity: 0;
@@ -129,7 +129,7 @@ section .detail-box.in-view {
     animation: moveInRight 1s ease-out forwards;
 }
 
-/* Animation for when the detail-box goes out of view */
+Animation for when the detail-box goes out of view 
 @keyframes moveOutRight {
     0% {
         opacity: 1;
@@ -156,7 +156,7 @@ section .detail-box.out-of-view {
 
 .detail-box:nth-child(3) {
     animation-delay: 0.7s;
-}
+}*/
 
 /*--------------------------------------------------------------
   Company Details Section
@@ -415,8 +415,12 @@ footer {
     margin: 10px;
 }
 
-#colorblue1:hover, #colorblue2:hover {
-    color: #1e90ff;
+#colorblue1:hover {
+    color: #0866ff;
+}
+
+#colorblue2:hover {
+    color: #0a66c2;
 }
 
 #colorblue1 {
