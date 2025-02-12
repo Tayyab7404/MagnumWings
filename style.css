@@ -643,11 +643,11 @@ footer {
     }
 }
 
-@media (max-height: 768px) {
+/*@media (max-height: 768px) {
     .ceo-container {
         display: block;
     }
     .ceo-message {
         margin-top: 0;
     }
-}
+}*/
